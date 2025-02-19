@@ -15,7 +15,7 @@ import ThemeToggle from '../components/ThemeToggle.astro';
 
 <!-- Main Layout with SEO title -->
 <Layout 
-  title="Servland - Business Landing Page"
+  title="Web Development Solutions | JJWDev"
   description="Transform your business with our professional landing page. Built with Astro and Tailwind CSS, offering fast performance, responsive design, and modern features like dark mode and contact forms."
   image="/preview.png"
 >
@@ -24,18 +24,18 @@ import ThemeToggle from '../components/ThemeToggle.astro';
   <ScrollToTop />
   
   <!-- Header Section -->
-  <header slot="header" class="sticky top-0 z-50 bg-gradient-to-r from-blue-500 to-purple-600 dark:from-blue-600 dark:to-purple-800 font-poppins w-full">
+  <header slot="header" class="sticky top-0 z-50 bg-gradient-to-r from-green-500 to-green-200 dark:from-green-400 dark:to-green-800 font-poppins w-full">
     <!-- Decorative elements -->
     <div class="absolute inset-0 bg-black/5 dark:bg-black/20 backdrop-blur-md"></div>
     <!-- Navigation -->
-    <nav class="container mx-auto px-4 py-4 relative z-10">
+    <nav class="container mx-auto px-4 py-2 relative z-10">
       <div class="flex justify-between items-center">
         <!-- Logo -->
         <a href="/" class="flex items-center space-x-2">
-          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center shadow-lg">
-            <span class="text-white font-bold">SL</span>
+          <div class="w-14 h-14 flex items-center justify-center">
+            <img src="/jjwdev-logo-trans.webp" alt="">
           </div>
-          <span class="text-lg font-semibold text-white">Servland</span>
+          <span class="text-lg font-semibold text-white">JJWDev</span>
         </a>
         
         <!-- Theme Toggle -->
@@ -58,29 +58,37 @@ import ThemeToggle from '../components/ThemeToggle.astro';
     <div class="container mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-8 [grid-template-areas:'box1'_'box3'_'box2'] md:[grid-template-areas:'box1_box3'_'box2_box3']">
         <!-- Box 1: Headers -->
-        <div class="[grid-area:box1] animate-slide-up bg-gradient-to-br from-blue-500 to-purple-600 dark:from-blue-600 dark:to-purple-800 p-8 rounded-lg relative overflow-hidden shadow-xl">
+        <div class="[grid-area:box1] animate-slide-up bg-gradient-to-br from-blue-500 to-purple-600 dark:from-green-400 dark:to-green-800 p-8 rounded-lg relative overflow-hidden shadow-xl">
           <!-- Decorative elements -->
           <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full transform translate-x-1/2 -translate-y-1/2"></div>
           <div class="absolute -bottom-8 -left-8 w-48 h-48 bg-white/10 rounded-full"></div>
           <div class="relative z-10">
             <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 font-poppins">
-              Our great Service
+              American Based 
             </h1>
             <h2 class="text-3xl md:text-4xl text-gray-100 font-poppins">
-              Why Use Us?
+              Web Development Services
             </h2>
+            <ul>
+              <li>E-Commerce</li>
+              <li>Web Development</li>
+              <li>Consulting</li>
+              <li>Digital Marketing</li>
+              <li>SEO</li>
+              <li>Branding</li>
+            </ul>
           </div>
         </div>
 
         <!-- Box 2: Services -->
-        <div id="services" class="[grid-area:box2] bg-gradient-to-br from-blue-500 to-purple-600 dark:from-blue-600 dark:to-purple-800 rounded-lg p-8 animate-slide-up relative overflow-hidden shadow-xl">
+        <div id="services" class="[grid-area:box2] bg-gradient-to-br from-blue-500 to-purple-600 dark:from-green-400 dark:to-green-800 rounded-lg p-8 animate-slide-up relative overflow-hidden shadow-xl">
           <!-- Decorative circles -->
           <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full transform translate-x-1/2 -translate-y-1/2"></div>
           <div class="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full transform -translate-x-1/2 translate-y-1/2"></div>
           
           <h2 class="text-3xl font-bold mb-8 text-center text-white font-poppins relative z-10">Our Services</h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 relative z-10">
-            {[1, 2, 3, 4].map((service) => (
+            {["E-Commerce", "Web Development", "Consulting", "Digital Marketing"].map((service) => (
               <div class="bg-white/10 backdrop-blur-sm p-4 sm:p-6 lg:p-8 rounded-lg shadow-lg hover:shadow-xl transition-all hover:scale-105 hover:bg-white/20 group">
                 <h3 class="text-lg sm:text-xl lg:text-2xl font-semibold mb-4 text-white font-poppins">Service {service}</h3>
                 <p class="text-sm sm:text-base lg:text-lg text-gray-100 group-hover:text-white transition-colors">
@@ -260,7 +268,7 @@ import ThemeToggle from '../components/ThemeToggle.astro';
   </main>
   
   <!-- Footer -->
-  <footer slot="footer" class="mt-20 bg-gradient-to-r from-blue-500 to-purple-600 dark:from-blue-600 dark:to-purple-800 text-white py-12 relative overflow-hidden">
+  <footer slot="footer" class="mt-20 bg-gradient-to-r from-blue-500 to-purple-600 dark:from-green-400 dark:to-green-800 text-white py-12 relative overflow-hidden">
     <!-- Decorative elements -->
     <div class="absolute inset-0 overflow-hidden">
       <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full transform translate-x-1/2 -translate-y-1/2"></div>

@@ -4,6 +4,10 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
+      screens: {
+        '3xl': '1920px',   // for 1080p/2K
+        '4xl': '2560px',   // for 2K and above
+      },
       colors: {
         'brand-blue': '#0047AB',
         'dark': {

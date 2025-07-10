@@ -8,206 +8,109 @@
 
 // Import required components and layouts
 import Layout from '../layouts/Layout.astro';
-import ParallaxBackground from '../components/ParallaxBackground.astro';
 import ScrollToTop from '../components/ScrollToTop.astro';
+import Navigation from '../components/Navigation.astro';
+import Hero from '../components/Hero.astro';
+import Process from '../components/Process.astro';
+import Services from '../components/Services.astro';
 ---
 
 <!-- Main Layout with SEO title -->
-<Layout 
-  title="Web Development Solutions | JJWDev"
-  description="Transform your business with our professional landing page. Built with Astro and Tailwind CSS, offering fast performance, responsive design, and modern features like dark mode and contact forms."
+<Layout
+  title="NextGen Dev Labs | eCommerce Solutions"
+  description="NextGen Dev Labs delivers expert ecommerce solutions to help businesses grow through powerful development, strategy, and optimization."
   image="/preview.png"
 >
   <!-- Background Components -->
   <ScrollToTop />
-  
+
   <!-- Header Section -->
-  <header slot="header" class="sticky top-0 z-50 bg-white font-poppins w-full">
-    <!-- Navigation -->
-    <nav class="3xl:w-[2000px] mx-auto px-4 py-6 relative z-10">
-      <div class="relative flex items-center justify-between">
-        
-        <!-- Logo on the left -->
-        <a href="/" class="flex items-center space-x-2">
-          <div class="w-16 h-16 flex items-center justify-center">
-            <img src="/images/BCD-Labs-Logo.webp" alt="">
-          </div>
-          <span class="text-2xl font-semibold text-black leading-tight">
-            BigCommerce<br>Development Labs
-          </span>
-        </a>
-  
-        <!-- Centered Nav Links -->
-        <div class="absolute left-1/2 transform -translate-x-1/2 flex gap-4">
-          <a class="hover:opacity-80 transition-opacity flex items-center space-x-2 bg-white/10 rounded-full px-4 sm:px-6 py-2 hover:bg-white/20 text-black">
-            <span class="sm:inline text-xl">Services</span>
-          </a>
-          <a class="hover:opacity-80 transition-opacity flex items-center space-x-2 bg-white/10 rounded-full px-4 sm:px-6 py-2 hover:bg-white/20 text-black">
-            <span class="sm:inline text-xl">About</span>
-          </a>
-          <a class="hover:opacity-80 transition-opacity flex items-center space-x-2 bg-white/10 rounded-full px-4 sm:px-6 py-2 hover:bg-white/20 text-black">
-            <span class="sm:inline text-xl">Pricing</span>
-          </a>
-          <a class="hover:opacity-80 transition-opacity flex items-center space-x-2 bg-white/10 rounded-full px-4 sm:px-6 py-2 hover:bg-white/20 text-black">
-            <span class="sm:inline text-xl">Contact</span>
-          </a>
-        </div>
-  
-        <!-- Button on the right -->
-        <div class="absolute right-0 flex items-center">
-          <a href="/book" class="bg-[#042C5E] text-white text-xl px-6 py-4 rounded-full hover:bg-gray-600 transition-colors">
-            Book a Call
-          </a>
-        </div>
-      </div>
-    </nav>
+  <header
+    slot="header"
+    class="sticky top-0 z-50 bg-white font-poppins w-full lg:shadow-[inset_0_-2px_8px_rgba(0,0,0,0.4)]"
+  >
+    <Navigation />
   </header>
-  
-  
 
   <!-- Main Content -->
   <main class="w-[100vw] mx-auto font-lato relative">
-    <div class="h-[800px] bg-[url('/images/BCDL-Hero.webp')] bg-cover bg-center">
-      <div class="w-[80%] pt-40 mx-auto px-4 leading-relaxed">
-        <h1 class="text-7xl leading-[90px]">U.S. Based <br>BigCommerce Development &<br>Growth Experts</h1>
-        <p class="text-3xl mt-6">Our team of BigCommerce experts is dedicated to quality and growth. We treat <br>your company as if it were our own.</p>
-        <p class="mt-14">
-          <a href="/book" class="bg-[#042C5E] text-white text-xl px-6 py-4 rounded-full hover:bg-gray-600 transition-colors">
-            Book a Free Audit
-          </a>
-        </p>
+    <Hero />
+    <Process />
+    <Services />
+
+    <div class="max-w-7xl mx-auto p-6 grid grid-cols-1 md:grid-cols-3 grid-rows-2 gap-6">
+      <!-- Left Column: Conversion Rate (spans 2 rows) -->
+      <div class="bg-gradient-to-br from-purple-100 to-purple-300 p-6 rounded-xl row-span-2 flex flex-col justify-between">
+        <div class="text-5xl font-bold text-purple-800">25%</div>
+        <div class="mt-6">
+          <div class="font-semibold text-purple-900">Conversion Rate Boost</div>
+          <div class="text-sm text-purple-700">Experience increased sales and engagement.</div>
+        </div>
+      </div>
+
+      <!-- Top Middle: Image 1 -->
+      <div class="rounded-xl overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
+          alt="Team working"
+          class="w-full h-full object-cover rounded-xl"
+        />
+      </div>
+
+      <!-- Top Right: Client Satisfaction -->
+      <div class="bg-blue-100 p-6 rounded-xl flex flex-col justify-between">
+        <div class="text-5xl font-bold text-blue-900">90%</div>
+        <div class="mt-6">
+          <div class="font-semibold text-blue-900">Client Satisfaction Rate</div>
+          <div class="text-sm text-blue-800">Join our happy clients today!</div>
+        </div>
+      </div>
+
+      <!-- Bottom Middle: Store Count -->
+      <div class="bg-lime-100 p-6 rounded-xl flex flex-col justify-between">
+        <div class="text-5xl font-bold text-lime-900">200+</div>
+        <div class="mt-6">
+          <div class="font-semibold text-lime-900">Stores Optimized Successfully</div>
+          <div class="text-sm text-lime-800">Trusted by top eCommerce brands.</div>
+        </div>
+      </div>
+
+      <!-- Bottom Right: Image 2 -->
+      <div class="rounded-xl overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1556740714-a8395b3bf30f"
+          alt="Working"
+          class="w-full h-full object-cover rounded-xl"
+        />
       </div>
     </div>
-    <section class="py-20 bg-white font-sans text-black">
-      <div class="max-w-[1600px] mx-auto px-4 text-center">
-        <h2 class="text-[38px] font-semibold mb-12">OUR PROCESS</h2>
-        <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-          <!-- Card 1 -->
-          <div class="bg-white rounded-xl shadow-md overflow-hidden">
-            <img src="/images/Audit.webp" alt="Audit" class="w-full h-40 object-cover">
-            <div class="p-4 text-left">
-              <h3 class="text-2xl font-bold">01. Audit</h3>
-              <p class="text-lg text-gray-600">We begin by reviewing your business plan or current BigCommerce setup, identifying bottlenecks, and assessing growth opportunities.</p>
-            </div>
-          </div>
-    
-          <!-- Card 2 -->
-          <div class="bg-white rounded-xl shadow-md overflow-hidden">
-            <img src="/images/Strategy.webp" alt="Strategy" class="w-full h-40 object-cover">
-            <div class="p-4 text-left">
-              <h3 class="text-2xl font-bold">02. Strategy</h3>
-              <p class="text-lg text-gray-600">Our team crafts a tailored roadmap focused on conversion, performance, and scalable growth for your ecommerce store.</p>
-            </div>
-          </div>
-    
-          <!-- Card 3 -->
-          <div class="bg-white rounded-xl shadow-md overflow-hidden">
-            <img src="/images/Build.webp" alt="Build" class="w-full h-40 object-cover">
-            <div class="p-4 text-left">
-              <h3 class="text-2xl font-bold">03. Build</h3>
-              <p class="text-lg text-gray-600">From custom themes to advanced widgets and integrations, we bring your vision to life with clean, scalable BigCommerce code.</p>
-            </div>
-          </div>
-    
-          <!-- Card 4 -->
-          <div class="bg-white rounded-xl shadow-md overflow-hidden">
-            <img src="/images/Optimize.webp" alt="Optimize" class="w-full h-40 object-cover">
-            <div class="p-4 text-left">
-              <h3 class="text-2xl font-bold">04. Optimize</h3>
-              <p class="text-lg text-gray-600">We fine-tune your site for speed, SEO, and user experience — ensuring visitors convert into loyal customers.</p>
-            </div>
-          </div>
-    
-          <!-- Card 5 -->
-          <div class="bg-white rounded-xl shadow-md overflow-hidden">
-            <img src="/images/Support.webp" alt="Support" class="w-full h-40 object-cover">
-            <div class="p-4 text-left">
-              <h3 class="text-2xl font-bold">05. Support</h3>
-              <p class="text-lg text-gray-600">Post-launch, we provide on-demand support, performance monitoring, and ongoing improvements to keep you ahead.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="py-20 font-sans text-black bg-gradient-to-br from-[#021228] via-[#041F3A] to-[#062E51]">
-      <div class="max-w-[1600px] mx-auto px-4">
-        <div class="flex items-center justify-between mb-10">
-          <h2 class="text-[38px] font-semibold text-white">SERVICES SNAPSHOT</h2>
-          <!-- <a href="/services" class="border border-white text-white px-4 py-2 rounded-full text-2xl hover:bg-white hover:text-[#062E51] transition-colors">
-            View All
-          </a> -->
-        </div>
-    
-        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <!-- Card 1 -->
-          <div class="bg-[#E94F3D] text-white rounded-xl p-6 shadow-md">
-            <div class="text-2xl mb-2">✨</div>
-            <h3 class="text-xl font-bold mb-2">SEO/CRO</h3>
-            <p class="text-lg mb-4">Boost visibility and conversions with tailored BigCommerce SEO and A/B testing strategies that drive revenue.</p>
-            <a href="/services/seo-cro" class="text-sm font-semibold underline hover:text-white/80">Learn more ></a>
-          </div>
-    
-          <!-- Card 2 -->
-          <div class="bg-white rounded-xl p-6 shadow-md">
-            <div class="text-2xl mb-2">🎨</div>
-            <h3 class="text-xl font-bold mb-2">Stencil Theme Dev</h3>
-            <p class="text-lg mb-4 text-gray-700">Custom BigCommerce theme development using Stencil to deliver fast, beautiful, and fully branded storefronts.</p>
-            <a href="/services/stencil-themes" class="text-sm font-semibold text-[#062E51] underline hover:text-[#041F3A]">Learn more ></a>
-          </div>
-    
-          <!-- Card 3 -->
-          <div class="bg-[#E94F3D] text-white rounded-xl p-6 shadow-md">
-            <div class="text-2xl mb-2">⚙️</div>
-            <h3 class="text-xl font-bold mb-2">Custom Widgets</h3>
-            <p class="text-lg mb-4">Add advanced functionality to your BigCommerce store with flexible, reusable widget components built to perform.</p>
-            <a href="/services/widgets" class="text-sm font-semibold underline hover:text-white/80">Learn more ></a>
-          </div>
-    
-          <!-- Card 4 -->
-          <div class="bg-white rounded-xl p-6 shadow-md">
-            <div class="text-2xl mb-2">🔗</div>
-            <h3 class="text-xl font-bold mb-2">Integrations</h3>
-            <p class="text-lg mb-4 text-gray-700">Seamlessly connect BigCommerce to your ERP, CRM, or third-party apps with secure and scalable integrations.</p>
-            <a href="/services/integrations" class="text-sm font-semibold text-[#062E51] underline hover:text-[#041F3A]">Learn more ></a>
-          </div>
-    
-          <!-- Card 5 -->
-          <div class="bg-[#E94F3D] text-white rounded-xl p-6 shadow-md">
-            <div class="text-2xl mb-2">📈</div>
-            <h3 class="text-xl font-bold mb-2">Marketing/CRM Bridges</h3>
-            <p class="text-lg mb-4">Empower your marketing stack with custom-built CRM and automation bridges that sync conversion data in real-time.</p>
-            <a href="/services/marketing-crm" class="text-sm font-semibold underline hover:text-white/80">Learn more ></a>
-          </div>
-    
-          <!-- Card 6 -->
-          <div class="bg-white rounded-xl p-6 shadow-md">
-            <div class="text-2xl mb-2">🛠️</div>
-            <h3 class="text-xl font-bold mb-2">Ongoing Support</h3>
-            <p class="text-lg mb-4 text-gray-700">Stay ahead with proactive BigCommerce maintenance, updates, and technical support from our expert team.</p>
-            <a href="/services/support" class="text-sm font-semibold text-[#062E51] underline hover:text-[#041F3A]">Learn more ></a>
-          </div>
-        </div>
-      </div>
-    </section>
-    
   </main>
-  
-  
+
   <!-- Footer -->
-  <footer slot="footer" class="mt-20 bg-gradient-to-r from-blue-500 to-purple-600 dark:from-green-400 dark:to-green-800 text-white py-12 relative overflow-hidden">
+  <footer
+    slot="footer"
+    class="mt-20 bg-gradient-to-r from-blue-500 to-purple-600 dark:from-green-400 dark:to-green-800 text-white py-12 relative overflow-hidden"
+  >
     <!-- Decorative elements -->
     <div class="absolute inset-0 overflow-hidden">
-      <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full transform translate-x-1/2 -translate-y-1/2"></div>
-      <div class="absolute bottom-0 left-1/4 w-48 h-48 bg-white/10 rounded-full transform -translate-y-1/2"></div>
+      <div
+        class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full transform translate-x-1/2 -translate-y-1/2"
+      >
+      </div>
+      <div
+        class="absolute bottom-0 left-1/4 w-48 h-48 bg-white/10 rounded-full transform -translate-y-1/2"
+      >
+      </div>
     </div>
-    
+
     <div class="container mx-auto px-4 relative z-10">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div>
           <div class="flex items-center space-x-2 mb-4">
             <a href="/" class="flex items-center space-x-2">
-              <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center shadow-lg">
+              <div
+                class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center shadow-lg"
+              >
                 <span class="text-white font-bold">SL</span>
               </div>
               <span class="text-white font-semibold text-lg">Servland</span>
@@ -220,10 +123,18 @@ import ScrollToTop from '../components/ScrollToTop.astro';
         <div>
           <h3 class="text-xl font-semibold mb-4 font-poppins">Services:</h3>
           <ul class="space-y-2 font-medium text-gray-100">
-            <li class="hover:text-white transition-colors"><a href="#services" class="hover:underline">Service 1</a></li>
-            <li class="hover:text-white transition-colors"><a href="#services" class="hover:underline">Service 2</a></li>
-            <li class="hover:text-white transition-colors"><a href="#services" class="hover:underline">Service 3</a></li>
-            <li class="hover:text-white transition-colors"><a href="#services" class="hover:underline">Service 4</a></li>
+            <li class="hover:text-white transition-colors">
+              <a href="#services" class="hover:underline">Service 1</a>
+            </li>
+            <li class="hover:text-white transition-colors">
+              <a href="#services" class="hover:underline">Service 2</a>
+            </li>
+            <li class="hover:text-white transition-colors">
+              <a href="#services" class="hover:underline">Service 3</a>
+            </li>
+            <li class="hover:text-white transition-colors">
+              <a href="#services" class="hover:underline">Service 4</a>
+            </li>
           </ul>
         </div>
         <div>
@@ -231,34 +142,75 @@ import ScrollToTop from '../components/ScrollToTop.astro';
           <ul class="space-y-2">
             <li class="text-white transition-colors flex items-center space-x-2">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                ></path>
               </svg>
-              <a href="tel:02012345678" class="text-white hover:text-white transition-colors">020 1234 5678</a>
+              <a href="tel:02012345678" class="text-white hover:text-white transition-colors"
+                >020 1234 5678</a
+              >
             </li>
             <li class="hover:text-white transition-colors flex items-center space-x-2">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                ></path>
               </svg>
-              <a href="mailto:info@example.com" class="hover:text-white transition-colors">info@example.com</a>
+              <a href="mailto:info@example.com" class="hover:text-white transition-colors"
+                >info@example.com</a
+              >
             </li>
           </ul>
           <div class="flex items-center space-x-4 mt-6">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity bg-white/10 p-2 rounded-full hover:bg-white/20" aria-label="Visit our Facebook page">
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:opacity-80 transition-opacity bg-white/10 p-2 rounded-full hover:bg-white/20"
+              aria-label="Visit our Facebook page"
+            >
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <title>Facebook</title>
-                <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+                <path
+                  d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"
+                ></path>
               </svg>
             </a>
-            <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity bg-white/10 p-2 rounded-full hover:bg-white/20" aria-label="Visit our X (Twitter) page">
+            <a
+              href="https://x.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:opacity-80 transition-opacity bg-white/10 p-2 rounded-full hover:bg-white/20"
+              aria-label="Visit our X (Twitter) page"
+            >
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <title>X (Twitter)</title>
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                ></path>
               </svg>
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity bg-white/10 p-2 rounded-full hover:bg-white/20" aria-label="Visit our Instagram page">
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:opacity-80 transition-opacity bg-white/10 p-2 rounded-full hover:bg-white/20"
+              aria-label="Visit our Instagram page"
+            >
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <title>Instagram</title>
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.438-.645 1.438-1.44s-.643-1.44-1.438-1.44z"/>
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.438-.645 1.438-1.44s-.643-1.44-1.438-1.44z"
+                ></path>
               </svg>
             </a>
           </div>
@@ -289,26 +241,26 @@ import ScrollToTop from '../components/ScrollToTop.astro';
     if (form && formMessage && submitButton && loadingSpinner) {
       form.addEventListener('submit', async (e) => {
         e.preventDefault();
-        
+
         // Show loading state
         submitButton.disabled = true;
         loadingSpinner.classList.remove('hidden');
-        
+
         try {
           const formData = new FormData(form);
           const response = await fetch(form.action, {
             method: 'POST',
             body: formData,
           });
-          
+
           const result = await response.json();
-          
+
           // Display success/error message
           formMessage.textContent = result.message;
-          formMessage.className = result.success 
+          formMessage.className = result.success
             ? 'mt-4 text-green-500 dark:text-green-400'
             : 'mt-4 text-red-500 dark:text-red-400';
-          
+
           // Reset form on success
           if (result.success) {
             form.reset();

@@ -1,12 +1,47 @@
-<div class="h-[800px] bg-[url('/images/BCDL-Hero.webp')] bg-cover bg-center">
-    <div class="w-[80%] pt-40 mx-auto px-4 leading-relaxed">
-      <h1 class="text-7xl leading-[90px]">U.S. Based <br>BigCommerce Development &<br>Growth Experts</h1>
-      <p class="text-3xl mt-6">Our team of BigCommerce and Shopify experts are dedicated to quality and growth. We treat <br>your company as if it were our own.</p>
-      <img width="300px" class="w-[350px] mt-9" src="/images/trusted-reviews.webp" alt="">
-      <p class="mt-14">
-        <a href="/book" class="bg-[#E94F3D] text-white text-xl px-6 py-4 rounded-full hover:bg-gray-600 transition-colors">
+---
+import { Image } from "astro:assets";
+import heroImage from "../assets/images/hero-image.png";
+import heroImage2 from "../assets/images/hero-image2.png";
+---
+
+
+<div class="relative overflow-hidden flex w-full items-center  ">
+
+  <div class="absolute left-0 bottom-0 top-[30%] md:top-[40%] lg:top-[35%] xl:top-[38%] w-full  bg-[#e9edf2] -z-10 "></div>
+
+
+    <div class="pt-8 m-10 w-full max-w-7xl mx-auto leading-relaxed flex flex-col-reverse lg:flex-row items-center lg:justify-between gap-8" >
+
+      <!-- Hero Text -->
+      <div class="flex flex-col max-w-lg">
+        <h1 class="font-semibold">Big Commerce Growth & Development <i>Experts</i></h1> 
+        <p class=" mt-5 md:mt-9 max-w-md">Design-to-code implementation, site speed optimization, and mobile-first layouts. Launch faster, convert better.</p>
+        <div class="mt-5 ">
+          <a href="/book" class="button button-primary  transition-colors">
           Book a Free Audit
         </a>
-      </p>
+        </div>
+          <img src="/images/trusted-reviews.webp" class="w-[350px] mt-20" alt="Trusted Reviews" />
+
+      </div>
+
+      <div class="max-w-[550px] lg:max-w-[600px] w-full flex justify-center  relative">
+        <Image src={heroImage}
+        alt="Minimalist home office setup with a white desk, MacBook, vintage camera, clear acrylic chair, potted snake plant, and wooden ladder against a white wall"
+        class="bject-contain w-full h-auto z-0"
+        widths={[ 640, 960, 1200]}
+        sizes="(max-width: 768px) 100vw, 50vw"/>
+
+        <Image src={heroImage2} 
+        alt="Minimalist home office setup with a white desk, MacBook, vintage camera, clear acrylic chair, potted snake plant, and wooden ladder against a white wall"
+        class="absolute bottom-0 left-6  w-32 md:w-35 lg:w-40  max-h-[200px] sm:max-h-[360px] z-10 drop-shadow-xl"  
+        widths={[240, 280]}
+        sizes="(max-width: 768px) 40vw, 25vw"/>
+      </div>
+      
+     
     </div>
   </div>
+
+
+  <!--Our team of BigCommerce and Shopify experts are dedicated to quality and growth. We treat <br>your company as if it were our own. -->

@@ -1,5 +1,6 @@
 ---
 import CookieConsent from '../components/CookieConsent.astro';
+import "../styles/global.css";
 
 interface Props {
   title: string;
@@ -83,10 +84,10 @@ const fullTitle = title === siteTitle ? title : `${title} | ${siteTitle}`;
       window.localStorage.setItem('theme', theme);
     </script>
   </head>
-  <body class="min-h-screen bg-[#F8F8F8] transition-colors duration-200 font-lato flex flex-col">
+  <body class="duration-200 font-lato">
     <slot name="header" />
     <div class="flex-grow">
-      <div class="2xl:w-[100%] mx-auto">
+      <div>
         <slot />
       </div>
     </div>

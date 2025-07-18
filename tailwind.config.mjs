@@ -9,7 +9,8 @@ export default {
         '4xl': '2560px',   // for 2K and above
       },
       colors: {
-        'brand-blue': '#0047AB',
+        'brand-blue': '#042C5E', // #0047AB
+        'primary': '#f9f9f9',
         'dark': {
           'bg': '#1a1a1a',
           'card': '#2a2a2a',

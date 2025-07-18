@@ -13,6 +13,8 @@ import Navigation from '../components/Navigation.astro';
 import Hero from '../components/Hero.astro';
 import Process from '../components/Process.astro';
 import Services from '../components/Services.astro';
+import Marquee from "../components/Marquee/Marquee.astro";
+
 ---
 
 <!-- Main Layout with SEO title -->
@@ -27,14 +29,15 @@ import Services from '../components/Services.astro';
   <!-- Header Section -->
   <header
     slot="header"
-    class="sticky top-0 z-50 bg-white font-poppins w-full lg:shadow-[inset_0_-2px_8px_rgba(0,0,0,0.4)]"
+    class="sticky top-0 z-50 bg-white font-poppins w-full "
   >
     <Navigation />
   </header>
 
   <!-- Main Content -->
-  <main class="w-[100vw] mx-auto font-lato relative">
+  <main class="font-lato relative">
     <Hero />
+    <Marquee />
     <Process />
     <Services />
 

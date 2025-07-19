@@ -43,7 +43,7 @@ export const projects = [
     <h1 class=" mb-3 text-center">Featured Builds</h1>
     <p class="text-center">A glimpse at how we turn ideas into high-performing e-commerce brands.</p>
 
-    <div class="max-w-7xl mx-auto p-6 grid grid-cols-1 md:grid-cols-3 grid-rows-2 gap-6">
+    <div class="max-w-6xl mx-auto p-6 grid grid-cols-1 md:grid-cols-3 grid-rows-2 gap-6">
         {projects.map((item) => (
         item.type === 'stat' ? (
             <div class={`p-6 rounded-xl flex flex-col justify-between ${item.bg} ${item.spanRows ? 'row-span-2' : ''}`}>

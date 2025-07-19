@@ -45,4 +45,11 @@
 .scroll-animation .col:nth-child(2) { @apply delay-200; }
 .scroll-animation .col:nth-child(3) { @apply delay-300; }
 
+.hide-scrollbar::-webkit-scrollbar {
+	display: none;
+  }
+.hide-scrollbar {
+	-ms-overflow-style: none;  /* IE and Edge */
+	scrollbar-width: none;     /* Firefox */
+  }
   

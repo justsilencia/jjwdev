@@ -35,30 +35,55 @@ const steps = [
 
 <section id="process" class="py-24 relative overflow-hidden scroll-animation">
   <!-- Indicators (positioned outside content area) -->
-  <div class="absolute top-24 left-8 z-20 hidden lg:flex items-center gap-1 text-black">
-    <svg class="w-5 h-5 animate-pulse" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+ <!-- LEFT INDICATOR -->
+<div onclick="scrollProcess('left')" class="cursor-pointer absolute top-[110px] left-6 z-20 hidden lg:flex flex-col items-center gap-2 group">
+  <span class="text-xs font-medium text-gray-500 group-hover:text-black transition">
+    Scroll Left
+  </span>
+  <div class="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center shadow-md bg-white group-hover:scale-110 transition transform">
+    <svg class="w-4 h-4 text-gray-500 group-hover:text-black transition animate-pulse" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
     </svg>
-    <span class="text-xs font-medium">Scroll</span>
   </div>
-  <div class="absolute top-24 right-8 z-20 hidden lg:flex items-center gap-1 text-black">
-    <span class="text-xs font-medium">More</span>
-    <svg class="w-5 h-5 animate-pulse" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+</div>
+
+<!-- RIGHT INDICATOR -->
+<div onclick="scrollProcess('right')" class="cursor-pointer absolute top-[110px] right-6 z-20 hidden lg:flex flex-col items-center gap-2 group">
+  <span class="text-xs font-medium text-gray-500 group-hover:text-black transition">
+    Scroll Right
+  </span>
+  <div class="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center shadow-md bg-white group-hover:scale-110 transition transform">
+    <svg class="w-4 h-4 text-gray-500 group-hover:text-black transition animate-pulse" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
     </svg>
   </div>
+</div>
+<!-- Vertical Scroll Indicator -->
+<div class="absolute top-1/2 right-2 transform -translate-y-1/2 z-20 hidden lg:block">
+  <div class="h-40 w-1 bg-orange-200 rounded-full overflow-hidden relative shadow-inner">
+    <div
+      id="scrollProgress"
+      class="absolute top-0 left-0 w-full bg-orange-500 rounded-full transition-all duration-300"
+      style="height: 10%;"
+    ></div>
+  </div>
+</div>
+
+
+
 
   <div class="max-w-6xl mx-auto px-4 text-center col">
-    <h1 class=" text-gray-900 mb-16">Our Process</h1>
-  <!-- Left gradient -->
-  <div class="absolute left-0 top-0 h-full w-10 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none"></div>
 
-  <!-- Right gradient -->
-  <div class="absolute right-0 top-0 h-full w-10 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none"></div>
+    <h1 class=" text-gray-900 mb-16 scroll-animation">Our Process</h1>
+    <!-- Left gradient -->
+    <div class="absolute left-0 top-0 h-full w-10 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none"></div>
 
-  
+    <!-- Right gradient -->
+    <div class="absolute right-0 top-0 h-full w-10 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none"></div>
+
+
     <!-- Carousel -->
-    <div class="overflow-x-auto pb-4 hide-scrollbar">
+    <div id="process-scroll" class="overflow-x-auto pb-4 hide-scrollbar col">
       <div class="flex gap-6 snap-x snap-mandatory scroll-smooth px-2 lg:px-0">
         {steps.map((step) => (
           <div class="snap-start shrink-0 w-[260px] sm:w-[300px] md:w-[320px] bg-white border border-primary rounded-2xl shadow-md hover:shadow-xl transition-all duration-300">
@@ -74,7 +99,7 @@ const steps = [
     </div>
 
     <!-- Swipe indicator for mobile -->
-    <div class="mt-6 text-sm text-gray-500 sm:hidden flex items-center justify-center gap-2">
+    <div class="mt-6 text-sm text-gray-500 md:hidden flex items-center justify-center gap-2">
       <span>Swipe to explore</span>
       <svg class="w-4 h-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -82,3 +107,35 @@ const steps = [
     </div>
   </div>
 </section>
+
+
+<script is:inline>
+  function scrollProcess(direction) {
+    const container = document.getElementById("process-scroll");
+
+    if (!container) return;
+
+    const scrollAmount = 320; // Adjust as needed
+
+    container.scrollBy({
+      left: direction === "left" ? -scrollAmount : scrollAmount,
+      behavior: "smooth",
+    });
+  }
+</script>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('process-scroll'); // your scroll container
+    const progress = document.getElementById('scrollProgress');
+
+    if (container && progress) {
+      container.addEventListener('scroll', () => {
+        const scrollLeft = container.scrollLeft;
+        const maxScroll = container.scrollWidth - container.clientWidth;
+        const percent = (scrollLeft / maxScroll) * 100;
+        progress.style.height = `${Math.max(percent, 5)}%`; // Avoid disappearing
+      });
+    }
+  });
+</script>

@@ -1,0 +1,40 @@
+---
+import { Image } from "astro:assets";
+import CTABanner from "../../assets/images/CTABanner.png";
+
+---
+
+<!-- CTA Banner Section -->
+<section class="relative overflow-hidden shadow-lg max-w-7xl mx-auto ">
+    <!-- Background Image -->
+    <div class=" absolute top-0 left-0 w-full h-full will-change-transform z-0">
+        <Image  src={CTABanner}
+        alt="Smiling businesswoman working on a laptop in a stylish home office"
+        width={1280}
+        height={533}
+        format="webp"
+		loading="lazy"
+		quality={70}
+        class="object-cover w-full h-full"
+        />
+    </div>
+  
+    <!-- Overlay Content -->
+    <div class="relative z-10 px-6 py-20 flex flex-col items-center justify-center text-center text-white">
+      <h2 class="mb-4">
+        Ready To Elevate Your Brand?<br />
+        Take The Next Step With Us!
+      </h2>
+      <p class="text-white mb-6 max-w-xl">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
+      </p>
+      <a
+        href="#contact"
+        class="button button-secondary"
+      >
+        Book A Free Audit
+      </a>
+    </div>
+  </section>
+  
+  

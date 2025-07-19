@@ -39,26 +39,28 @@ export const projects = [
 
 ---
 
-<section class="py-20">
-    <h1 class=" mb-3 text-center">Featured Builds</h1>
-    <p class="text-center">A glimpse at how we turn ideas into high-performing e-commerce brands.</p>
+<section class="scroll-animation py-20">
+  <div class="col">
+      <h1 class=" mb-3 text-center">Featured Builds</h1>
+      <p class="text-center">A glimpse at how we turn ideas into high-performing e-commerce brands.</p>
 
-    <div class="max-w-6xl mx-auto p-6 grid grid-cols-1 md:grid-cols-3 grid-rows-2 gap-6">
-        {projects.map((item) => (
-        item.type === 'stat' ? (
-            <div class={`p-6 rounded-xl flex flex-col justify-between ${item.bg} ${item.spanRows ? 'row-span-2' : ''}`}>
-            <div class={`text-5xl font-bold ${item.textColor}`}>{item.value}</div>
-            <div class="mt-6">
-                <div class={`font-semibold ${item.textColor}`}>{item.title}</div>
-                <div class={`text-sm ${item.textColor}/80`}>{item.description}</div>
-            </div>
-            </div>
-        ) : (
-            <div class="rounded-xl overflow-hidden">
-            <img src={item.imgSrc} alt={item.alt} class="w-full h-full object-cover rounded-xl" />
-            </div>
-        )
-        ))}
+      <div class="max-w-6xl mx-auto p-6 grid grid-cols-1 md:grid-cols-3 grid-rows-2 gap-6">
+          {projects.map((item) => (
+          item.type === 'stat' ? (
+              <div class={`p-6 rounded-xl flex flex-col justify-between ${item.bg} ${item.spanRows ? 'row-span-2' : ''}`}>
+              <div class={`text-5xl font-bold ${item.textColor}`}>{item.value}</div>
+              <div class="mt-6">
+                  <div class={`font-semibold ${item.textColor}`}>{item.title}</div>
+                  <div class={`text-sm ${item.textColor}/80`}>{item.description}</div>
+              </div>
+              </div>
+          ) : (
+              <div class="rounded-xl overflow-hidden">
+              <img src={item.imgSrc} alt={item.alt} class="w-full h-full object-cover rounded-xl" />
+              </div>
+          )
+          ))}
+      </div>
     </div>
 </section>
   

@@ -2,36 +2,39 @@
 import pricingData from "../../data/pricingData";
 
 ---
-<section id="pricing">
-<h1 class="text-center">No- Surprise Flat Rates</h1>
-<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mt-10 ">
-  {pricingData.map((item) => (
-    <div class={`p-6 rounded-xl border shadow-sm flex flex-col justify-between ${item.highlight ? 'border-blue-500' : 'border-gray-200'}`}>
-      <div>
-        <h3 class="font-bold mb-2">{item.title}</h3>
-        <p class="mb-4">{item.description}</p>
-        <div class="mb-4">
-          {item.priceNote && <span class="text-xs text-gray-500">{item.priceNote}</span>}
-          <h2 class="font-semibold">{item.price}</h2>
+<section class="scroll-animation" id="pricing">
+  <div class="col">
+    <h1 class="text-center">No- Surprise Flat Rates</h1>
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mt-10 ">
+      {pricingData.map((item) => (
+        <div class={`p-6 rounded-xl border shadow-sm flex flex-col justify-between ${item.highlight ? 'border-blue-500' : 'border-gray-200'}`}>
+          <div>
+            <h3 class="font-bold mb-2">{item.title}</h3>
+            <p class="mb-4">{item.description}</p>
+            <div class="mb-4">
+              {item.priceNote && <span class="text-xs text-gray-500">{item.priceNote}</span>}
+              <h2 class="font-semibold">{item.price}</h2>
+            </div>
+            <p class="mb-3 mt-8">What's included?</p>
+            <ul class="text-sm space-y-1 mb-6">
+              {item.features.map((feature, i) => (
+                <li>✦ {feature}</li>
+              ))}
+            </ul>
+          </div>
+          <a href="/book" class="button button-primary w-full md:w-2/3 text-center">
+            {item.buttonText}
+          </a>
         </div>
-        <p class="mb-3 mt-8">What's included?</p>
-        <ul class="text-sm space-y-1 mb-6">
-          {item.features.map((feature, i) => (
-            <li>✦ {feature}</li>
-          ))}
-        </ul>
-      </div>
-      <a href="/book" class="button button-primary w-full md:w-2/3 text-center">
-        {item.buttonText}
-      </a>
+      ))}
     </div>
-  ))}
-</div>
 
-<div class="text-center mt-8">
-  <a href="/book" class="button button-secondary text-center transition-colors">
-  View All
-</a>
+    <div class="text-center mt-8">
+      <a href="/book" class="button button-secondary text-center transition-colors">
+      View All
+    </a>
+    </div>
+
 </div>
 
 </section>

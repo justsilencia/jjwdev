@@ -31,7 +31,6 @@
   
   }
 
-
   /* You can include this in your global CSS if needed */
 .scroll-animation .col {
 	@apply translate-y-4 opacity-0 transition-all duration-1000;

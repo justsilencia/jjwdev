@@ -1,5 +1,29 @@
 ---
-export const projects = [
+
+import project1 from "../../assets/images/projects/project1-image.png";
+import project2 from "../../assets/images/projects/project2-image.png";
+import project3 from "../../assets/images/projects/project3-image.png";
+import type {imageMetadata} from "astro/assets/utils";
+import { Image } from "astro:assets";
+
+type ProjectItem =
+  | {
+      type: 'image';
+      imgSrc: ImageMetadata;
+      alt: string;
+    }
+  | {
+      type: 'stat';
+      bg: string;
+      value: string;
+      title: string;
+      description: string;
+      textColor: string;
+      spanRows?: number;
+    };
+
+/* Add any projects orr stats needed */
+export const projects: ProjectItem[] = [
   {
     type: 'stat',
     bg: 'bg-gradient-to-br from-[#0F172A] to-[#1E293B]',
@@ -11,8 +35,13 @@ export const projects = [
   },
   {
     type: 'image',
-    imgSrc: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f',
-    alt: 'Team working',
+    imgSrc: project1,
+    alt: 'Insert alt',
+  },
+  {
+    type: 'image',
+    imgSrc: project3,
+    alt: 'Insert alt',
   },
   {
     type: 'stat',
@@ -32,8 +61,8 @@ export const projects = [
   },
   {
     type: 'image',
-    imgSrc: 'https://images.unsplash.com/photo-1556740714-a8395b3bf30f',
-    alt: 'Working',
+    imgSrc: project2,
+    alt: 'Insert alt',
   },
 ];
 
@@ -47,17 +76,17 @@ export const projects = [
       <div class="max-w-6xl mx-auto p-6 grid grid-cols-1 md:grid-cols-3 grid-rows-2 gap-6">
           {projects.map((item) => (
           item.type === 'stat' ? (
-              <div class={`p-6 rounded-xl flex flex-col justify-between ${item.bg} ${item.spanRows ? 'row-span-2' : ''}`}>
-              <div class={`text-5xl font-bold ${item.textColor}`}>{item.value}</div>
-              <div class="mt-6">
-                  <div class={`font-semibold ${item.textColor}`}>{item.title}</div>
-                  <div class={`text-sm ${item.textColor}/80`}>{item.description}</div>
-              </div>
+              <div class={`p-6 cursor-pointer rounded-xl flex flex-col justify-between ${item.bg} ${item.spanRows ? 'row-span-2' : ''}`}>
+                <div class={`text-5xl font-bold ${item.textColor}`}>{item.value}</div>
+                <div class="mt-6">
+                    <div class={`font-semibold ${item.textColor}`}>{item.title}</div>
+                    <div class={`text-sm ${item.textColor}/80`}>{item.description}</div>
+                </div>
               </div>
           ) : (
-              <div class="rounded-xl overflow-hidden">
-              <img src={item.imgSrc} alt={item.alt} class="w-full h-full object-cover rounded-xl" />
-              </div>
+                <div class=" cursor-pointer rounded-xl overflow-hidden aspect-[16/9] bg-gray-100"> {/* remove bg-gray-100 if needed */}
+                  <Image src={item.imgSrc} alt={item.alt} class="w-full h-full object-contain rounded-xl"  loading="lazy"/>
+                </div>
           )
           ))}
       </div>

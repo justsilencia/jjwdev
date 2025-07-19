@@ -9,3 +9,6 @@
   }
 
 }
+.button-secondary {
+  @apply bg-white text-brand-blue border border-brand-blue hover:bg-gray-100 focus-visible:ring-gray-400;
+}

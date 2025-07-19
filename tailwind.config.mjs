@@ -11,6 +11,7 @@ export default {
       colors: {
         'brand-blue': '#042C5E', // #0047AB
         'primary': '#f9f9f9',
+        'secondary': '#DE6449', 
         'dark': {
           'bg': '#1a1a1a',
           'card': '#2a2a2a',

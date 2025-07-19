@@ -14,7 +14,8 @@ import Hero from '../components/Hero.astro';
 import Process from '../components/Process.astro';
 import Services from '../components/Services.astro';
 import Marquee from "../components/Marquee/Marquee.astro";
-
+import Price from '../components/Price/price.astro';
+import Section from '../components/Section/section.astro';
 ---
 
 <!-- Main Layout with SEO title -->
@@ -39,7 +40,13 @@ import Marquee from "../components/Marquee/Marquee.astro";
     <Hero />
     <Marquee />
     <Process />
+
     <Services />
+    <Section id="price" class="bg-primary">
+      <Price />
+    </Section>
+
+    
 
     <div class="max-w-7xl mx-auto p-6 grid grid-cols-1 md:grid-cols-3 grid-rows-2 gap-6">
       <!-- Left Column: Conversion Rate (spans 2 rows) -->

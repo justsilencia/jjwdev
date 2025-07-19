@@ -1,51 +1,78 @@
-<section class="py-20 bg-white font-sans text-black">
-    <div class="max-w-[1600px] mx-auto px-4 text-center">
-      <h2 class="text-[38px] font-semibold mb-12">OUR PROCESS</h2>
-      <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-        <!-- Card 1 -->
-        <div class="bg-white rounded-xl shadow-md overflow-hidden">
-          <img src="/images/Audit.webp" alt="Audit" class="w-full h-40 object-cover">
-          <div class="p-4 text-left">
-            <h3 class="text-2xl font-bold">01. Audit</h3>
-            <p class="text-lg text-gray-600">We begin by reviewing your business plan or current BigCommerce setup, identifying bottlenecks, and assessing growth opportunities.</p>
+---
+const steps = [
+  {
+    title: "Audit",
+    number: "01",
+    image: "/images/Audit.webp",
+    description: "We review your current BigCommerce setup, find bottlenecks, and highlight growth potential."
+  },
+  {
+    title: "Strategy",
+    number: "02",
+    image: "/images/Strategy.webp",
+    description: "We craft a personalized roadmap to increase conversions, speed, and scalability."
+  },
+  {
+    title: "Build",
+    number: "03",
+    image: "/images/Build.webp",
+    description: "From themes to widgets, we bring your brand to life with clean code."
+  },
+  {
+    title: "Optimize",
+    number: "04",
+    image: "/images/Optimize.webp",
+    description: "We enhance performance, SEO, and UX to maximize your results."
+  },
+  {
+    title: "Support",
+    number: "05",
+    image: "/images/Support.webp",
+    description: "We provide ongoing support and improvements to help you grow long-term."
+  }
+];
+---
+
+<section class="py-24 relative overflow-hidden">
+  <!-- Indicators (positioned outside content area) -->
+  <div class="absolute top-24 left-8 z-20 hidden lg:flex items-center gap-1 text-black">
+    <svg class="w-5 h-5 animate-pulse" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+    </svg>
+    <span class="text-xs font-medium">Scroll</span>
+  </div>
+  <div class="absolute top-24 right-8 z-20 hidden lg:flex items-center gap-1 text-black">
+    <span class="text-xs font-medium">More</span>
+    <svg class="w-5 h-5 animate-pulse" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+    </svg>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 text-center">
+    <h2 class="text-4xl font-semibold text-gray-900 mb-16">Our Process</h2>
+
+    <!-- Carousel -->
+    <div class="overflow-x-auto pb-4">
+      <div class="flex gap-6 snap-x snap-mandatory scroll-smooth px-2 lg:px-0">
+        {steps.map((step) => (
+          <div class="snap-start shrink-0 w-[260px] sm:w-[300px] md:w-[320px] bg-white border border-orange-100 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300">
+            <img src={step.image} alt={step.title} class="w-full h-36 object-cover rounded-t-2xl" />
+            <div class="p-6 space-y-3 text-left">
+              <div class="text-orange-600 font-semibold tracking-wide text-sm">{step.number}</div>
+              <h3 class="text-lg font-semibold text-gray-800">{step.title}</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">{step.description}</p>
+            </div>
           </div>
-        </div>
-  
-        <!-- Card 2 -->
-        <div class="bg-white rounded-xl shadow-md overflow-hidden">
-          <img src="/images/Strategy.webp" alt="Strategy" class="w-full h-40 object-cover">
-          <div class="p-4 text-left">
-            <h3 class="text-2xl font-bold">02. Strategy</h3>
-            <p class="text-lg text-gray-600">Our team crafts a tailored roadmap focused on conversion, performance, and scalable growth for your ecommerce store.</p>
-          </div>
-        </div>
-  
-        <!-- Card 3 -->
-        <div class="bg-white rounded-xl shadow-md overflow-hidden">
-          <img src="/images/Build.webp" alt="Build" class="w-full h-40 object-cover">
-          <div class="p-4 text-left">
-            <h3 class="text-2xl font-bold">03. Build</h3>
-            <p class="text-lg text-gray-600">From custom themes to advanced widgets and integrations, we bring your vision to life with clean, scalable BigCommerce code.</p>
-          </div>
-        </div>
-  
-        <!-- Card 4 -->
-        <div class="bg-white rounded-xl shadow-md overflow-hidden">
-          <img src="/images/Optimize.webp" alt="Optimize" class="w-full h-40 object-cover">
-          <div class="p-4 text-left">
-            <h3 class="text-2xl font-bold">04. Optimize</h3>
-            <p class="text-lg text-gray-600">We fine-tune your site for speed, SEO, and user experience — ensuring visitors convert into loyal customers.</p>
-          </div>
-        </div>
-  
-        <!-- Card 5 -->
-        <div class="bg-white rounded-xl shadow-md overflow-hidden">
-          <img src="/images/Support.webp" alt="Support" class="w-full h-40 object-cover">
-          <div class="p-4 text-left">
-            <h3 class="text-2xl font-bold">05. Support</h3>
-            <p class="text-lg text-gray-600">Post-launch, we provide on-demand support, performance monitoring, and ongoing improvements to keep you ahead.</p>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
-  </section>
+
+    <!-- Swipe indicator for mobile -->
+    <div class="mt-6 text-sm text-gray-500 sm:hidden flex items-center justify-center gap-2">
+      <span>Swipe to explore</span>
+      <svg class="w-4 h-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+      </svg>
+    </div>
+  </div>
+</section>

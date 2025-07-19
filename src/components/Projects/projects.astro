@@ -1,0 +1,64 @@
+---
+export const projects = [
+  {
+    type: 'stat',
+    bg: 'bg-gradient-to-br from-[#0F172A] to-[#1E293B]',
+    value: '25%',
+    title: 'Conversion Rate Boost',
+    description: 'Experience increased sales and engagement.',
+    textColor: 'text-white',
+    spanRows: 2,
+  },
+  {
+    type: 'image',
+    imgSrc: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f',
+    alt: 'Team working',
+  },
+  {
+    type: 'stat',
+    bg: 'bg-gradient-to-br from-[#CBD5E1] to-[#94A3B8]',
+    value: '90%',
+    title: 'Client Satisfaction Rate',
+    description: 'Join our happy clients today!',
+    textColor: 'text-slate-900',
+  },
+  {
+    type: 'stat',
+    bg: 'bg-gradient-to-br from-[#D1FAE5] to-[#6EE7B7]',
+    value: '200+',
+    title: 'Stores Optimized Successfully',
+    description: 'Trusted by top eCommerce brands.',
+    textColor: 'text-emerald-900',
+  },
+  {
+    type: 'image',
+    imgSrc: 'https://images.unsplash.com/photo-1556740714-a8395b3bf30f',
+    alt: 'Working',
+  },
+];
+
+---
+
+<section class="py-20">
+    <h1 class=" mb-3 text-center">Featured Builds</h1>
+    <p class="text-center">A glimpse at how we turn ideas into high-performing e-commerce brands.</p>
+
+    <div class="max-w-7xl mx-auto p-6 grid grid-cols-1 md:grid-cols-3 grid-rows-2 gap-6">
+        {projects.map((item) => (
+        item.type === 'stat' ? (
+            <div class={`p-6 rounded-xl flex flex-col justify-between ${item.bg} ${item.spanRows ? 'row-span-2' : ''}`}>
+            <div class={`text-5xl font-bold ${item.textColor}`}>{item.value}</div>
+            <div class="mt-6">
+                <div class={`font-semibold ${item.textColor}`}>{item.title}</div>
+                <div class={`text-sm ${item.textColor}/80`}>{item.description}</div>
+            </div>
+            </div>
+        ) : (
+            <div class="rounded-xl overflow-hidden">
+            <img src={item.imgSrc} alt={item.alt} class="w-full h-full object-cover rounded-xl" />
+            </div>
+        )
+        ))}
+    </div>
+</section>
+  
